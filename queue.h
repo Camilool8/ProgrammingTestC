@@ -13,7 +13,6 @@
 #ifndef QUEUE_H_
 #define QUEUE_H_
 
-
 #include <stdbool.h>
 
 /************** Data structure declarations ****************/
@@ -26,9 +25,12 @@ typedef struct ELE {
 
 /* Queue structure */
 typedef struct {
-    list_ele_t *head;  /* Linked list of elements */
+    list_ele_t *head;      /* Linked list of elements */
+    list_ele_t *tail;      /* Pointer to the last element in the list */
+    int size;              /* Number of elements in the queue */
+
     /*
-      You will need to add more fields to this structure
+      Additional fields have been added to this structure
       to efficiently implement q_size and q_insert_tail
     */
 } queue_t;
@@ -82,6 +84,4 @@ int q_size(queue_t *q);
  */
 void q_reverse(queue_t *q);
 
-
 #endif /* QUEUE_H_ */
-
